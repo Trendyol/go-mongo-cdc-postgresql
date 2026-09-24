@@ -1,0 +1,44 @@
+postgresql:
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "postgres"
+  database: "mydb"
+  sslMode: "disable"
+  batchSizeLimit: 1000
+  batchTickerDuration: 10s
+  concurrentRequest: 1
+  maxOpenConns: 10
+  maxIdleConns: 5
+  logLevel: "warn"
+
+mongodb:
+  connection:
+    uri: "localhost:27017"
+    database: "exampleDB"
+    collection: "exampleCollection"
+  connectionPool:
+    maxPoolSize: 100
+    minPoolSize: 5
+
+metric:
+  port: 8080
+
+checkpoint:
+  bootstrapSaveCount: 5000
+  bootstrapQueryBatchSize: 5000
+  bootstrapSaveInterval: 10s
+  tokenSaveInterval: 10s
+  changeStreamSaveCount: 500
+
+partition:
+  totalPartition: 1
+  heartbeatInterval: 10s
+  workerTimeout: 90s
+  rebalanceCheckInterval: 10s
+  consumerGroup: "postgresql"
+
+logger:
+  logLevel: "info"
+
+gracefulShutdownTimeout: 5s
