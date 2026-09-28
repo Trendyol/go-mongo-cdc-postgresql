@@ -3,7 +3,7 @@ module github.com/Trendyol/go-mongo-cdc-postgresql
 go 1.25.1
 
 require (
-	github.com/Trendyol/go-mongo-cdc v0.0.0-20251227201137-b5aee9100b97
+	github.com/Trendyol/go-mongo-cdc v0.0.0-20260928063617-8ae3cdec6dc7
 	github.com/json-iterator/go v1.1.12
 	github.com/prometheus/client_golang v1.22.0
 	go.mongodb.org/mongo-driver v1.17.4
