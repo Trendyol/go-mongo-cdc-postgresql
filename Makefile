@@ -25,3 +25,6 @@ build:
 
 deps:
 	go mod download
+
+compose:
+	docker compose up --wait --build --force-recreate --remove-orphans
