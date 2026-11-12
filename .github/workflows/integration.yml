@@ -29,13 +29,14 @@ jobs:
           go-version: "1.25"
 
       - name: Start containers
-        run: docker compose up --wait --build --force-recreate --remove-orphans
+        run: docker compose up --wait --force-recreate --remove-orphans
 
       - name: Docker status
-        run: docker ps -a
+        if: failure()
+        run: docker ps -a && docker compose logs --no-color
 
       - name: Integration Test
-        run: go test -v test/integration/integration_test.go
+        run: cd test/integration && go test -v .
         env:
           INPUT_PUBLISH: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
