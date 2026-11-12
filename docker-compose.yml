@@ -1,10 +1,11 @@
 services:
   mongodb:
-    image: mongo:8.0
+    # mongo:8.x fails on GHA ubuntu-latest (kernel >= 6.19); see SERVER-121912
+    image: mongo:7.0
     ports:
       - "27017:27017"
     environment:
-      MONGO_INITDB_DATABASE: exampleDB
+      MONGO_INITDB_DATABASE: dcp-test
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 2s

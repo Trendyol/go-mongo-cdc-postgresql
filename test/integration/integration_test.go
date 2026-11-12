@@ -8,8 +8,8 @@ import (
 )
 
 func TestServicesReachable(t *testing.T) {
-	waitForTCP(t, "mongodb", "localhost:27017", 2*time.Minute)
-	waitForTCP(t, "postgresql", "localhost:5432", 2*time.Minute)
+	waitForTCP(t, "mongodb", "localhost:27017", 30*time.Second)
+	waitForTCP(t, "postgresql", "localhost:5432", 30*time.Second)
 }
 
 func waitForTCP(t *testing.T, name, address string, timeout time.Duration) {
